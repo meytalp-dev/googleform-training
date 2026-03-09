@@ -46,8 +46,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 40px 40px 100px;
+  justify-content: flex-start;
+  padding: 10px 24px 56px;
   opacity: 0;
   transform: translateX(-60px);
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -70,6 +70,11 @@ body {
 .title-slide {
   background: linear-gradient(135deg, #0d2137 0%, #1a3a5c 40%, #0d2137 100%);
   text-align: center;
+  justify-content: center;
+}
+
+.divider-slide {
+  justify-content: center;
 }
 
 .title-slide .logo-area {
@@ -168,6 +173,7 @@ body {
   max-width: 760px;
   width: 100%;
   padding: 0 10px;
+  flex-shrink: 0;
   animation: fadeUp 0.6s ease-out;
 }
 
@@ -179,17 +185,17 @@ body {
 .section-header {
   display: flex;
   align-items: center;
-  gap: 14px;
-  margin-bottom: 24px;
+  gap: 8px;
+  margin-bottom: 8px;
 }
 
 .section-icon {
-  width: 56px; height: 56px;
-  border-radius: 16px;
+  width: 32px; height: 32px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 28px;
+  font-size: 16px;
   flex-shrink: 0;
 }
 
@@ -200,13 +206,13 @@ body {
 
 .section-title {
   font-family: 'Rubik', sans-serif;
-  font-size: clamp(20px, 3.5vw, 30px);
+  font-size: clamp(14px, 2.2vw, 18px);
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 1.2;
 }
 
 .section-subtitle {
-  font-size: 15px;
+  font-size: 11px;
   color: rgba(255,255,255,0.6);
   margin-top: 2px;
 }
@@ -215,27 +221,26 @@ body {
 .step-card {
   background: var(--card-bg);
   border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 16px;
-  padding: 20px 22px;
-  margin-bottom: 14px;
+  border-radius: 10px;
+  padding: 8px 12px;
+  margin-bottom: 5px;
   backdrop-filter: blur(10px);
   transition: all 0.3s;
 }
 
 .step-card:hover {
   background: rgba(255,255,255,0.1);
-  transform: translateY(-2px);
 }
 
 .step-number {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 32px; height: 32px;
-  border-radius: 10px;
+  width: 22px; height: 22px;
+  border-radius: 6px;
   font-weight: 700;
-  font-size: 15px;
-  margin-bottom: 10px;
+  font-size: 11px;
+  margin-bottom: 4px;
   color: var(--dark);
 }
 
@@ -246,25 +251,25 @@ body {
 
 .step-title {
   font-weight: 600;
-  font-size: 17px;
-  margin-bottom: 6px;
+  font-size: 12.5px;
+  margin-bottom: 2px;
 }
 
 .step-desc {
-  font-size: 15px;
+  font-size: 11.5px;
   color: rgba(255,255,255,0.75);
-  line-height: 1.7;
+  line-height: 1.45;
 }
 
 .step-path {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
   background: rgba(255,255,255,0.08);
-  padding: 6px 14px;
-  border-radius: 8px;
-  font-size: 13px;
-  margin-top: 8px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  margin-top: 4px;
   color: var(--sky);
   font-family: 'Rubik', sans-serif;
   direction: ltr;
@@ -277,9 +282,9 @@ body {
 .tip-box {
   background: rgba(102,187,106,0.12);
   border: 1px solid rgba(102,187,106,0.25);
-  border-radius: 14px;
-  padding: 16px 20px;
-  margin-top: 16px;
+  border-radius: 8px;
+  padding: 6px 10px;
+  margin-top: 5px;
   display: flex;
   gap: 12px;
   align-items: flex-start;
@@ -291,15 +296,14 @@ body {
 }
 
 .tip-icon {
-  font-size: 22px;
+  font-size: 14px;
   flex-shrink: 0;
-  margin-top: 2px;
 }
 
 .tip-text {
-  font-size: 14px;
+  font-size: 11px;
   color: rgba(255,255,255,0.85);
-  line-height: 1.7;
+  line-height: 1.4;
 }
 
 /* Visual demo */
@@ -371,8 +375,8 @@ body {
 /* Highlight text */
 .highlight {
   background: linear-gradient(135deg, rgba(79,195,247,0.2), rgba(38,198,218,0.2));
-  padding: 2px 8px;
-  border-radius: 6px;
+  padding: 1px 5px;
+  border-radius: 4px;
   font-weight: 500;
 }
 
@@ -426,20 +430,21 @@ body {
 .quiz-container {
   max-width: 700px;
   width: 100%;
+  flex-shrink: 0;
 }
 
 .quiz-card {
   background: var(--card-bg);
   border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 18px;
-  padding: 28px;
+  border-radius: 12px;
+  padding: 16px;
   backdrop-filter: blur(10px);
 }
 
 .quiz-progress {
   display: flex;
-  gap: 6px;
-  margin-bottom: 20px;
+  gap: 4px;
+  margin-bottom: 10px;
 }
 
 .quiz-dot {
@@ -454,31 +459,31 @@ body {
 .quiz-dot.current { background: var(--sky); }
 
 .quiz-question-num {
-  font-size: 13px;
+  font-size: 11px;
   color: var(--sky);
   font-weight: 600;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 
 .quiz-question-text {
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 600;
-  margin-bottom: 20px;
-  line-height: 1.5;
+  margin-bottom: 12px;
+  line-height: 1.4;
 }
 
 .quiz-options {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 6px;
 }
 
 .quiz-option {
   background: rgba(255,255,255,0.06);
   border: 2px solid rgba(255,255,255,0.12);
-  border-radius: 14px;
-  padding: 16px 20px;
-  font-size: 16px;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 13px;
   cursor: pointer;
   transition: all 0.3s;
   text-align: right;
@@ -486,24 +491,24 @@ body {
   font-family: 'Heebo', sans-serif;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
 }
 
 .quiz-option:hover {
   background: rgba(255,255,255,0.1);
   border-color: rgba(255,255,255,0.25);
-  transform: translateX(-4px);
+  transform: translateX(-3px);
 }
 
 .quiz-option .option-letter {
-  width: 32px; height: 32px;
-  border-radius: 10px;
+  width: 24px; height: 24px;
+  border-radius: 6px;
   background: rgba(255,255,255,0.1);
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 11px;
   flex-shrink: 0;
 }
 
@@ -527,10 +532,10 @@ body {
 }
 
 .quiz-feedback {
-  margin-top: 16px;
-  padding: 14px 18px;
-  border-radius: 12px;
-  font-size: 15px;
+  margin-top: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 12px;
   display: none;
   animation: fadeUp 0.3s ease-out;
 }
@@ -549,14 +554,14 @@ body {
 
 .quiz-next-btn {
   display: none;
-  margin-top: 16px;
-  padding: 12px 32px;
+  margin-top: 8px;
+  padding: 8px 24px;
   background: linear-gradient(135deg, var(--sky), var(--turquoise));
   border: none;
-  border-radius: 12px;
+  border-radius: 8px;
   color: var(--dark);
   font-family: 'Heebo', sans-serif;
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 600;
   cursor: pointer;
   transition: transform 0.3s;
@@ -595,25 +600,25 @@ body {
 .activity-card {
   background: var(--card-bg);
   border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 18px;
-  padding: 24px;
-  margin-bottom: 14px;
+  border-radius: 10px;
+  padding: 8px 12px;
+  margin-bottom: 5px;
   backdrop-filter: blur(10px);
 }
 
 .activity-card h3 {
-  font-size: 18px;
+  font-size: 13px;
   font-weight: 600;
-  margin-bottom: 12px;
+  margin-bottom: 4px;
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
 .activity-card p, .activity-card li {
-  font-size: 15px;
+  font-size: 11px;
   color: rgba(255,255,255,0.8);
-  line-height: 1.8;
+  line-height: 1.4;
 }
 
 .activity-card ul {
@@ -636,16 +641,16 @@ body {
 /* ===== SUMMARY SLIDE ===== */
 .summary-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 14px;
-  margin: 20px 0;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  margin: 8px 0;
 }
 
 .summary-item {
   background: var(--card-bg);
   border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 16px;
-  padding: 20px;
+  border-radius: 8px;
+  padding: 10px;
   text-align: center;
   backdrop-filter: blur(10px);
   transition: transform 0.3s;
@@ -653,18 +658,18 @@ body {
 
 .summary-item:hover { transform: translateY(-4px); }
 
-.summary-item .icon { font-size: 32px; margin-bottom: 10px; }
+.summary-item .icon { font-size: 20px; margin-bottom: 4px; }
 
 .summary-item h4 {
-  font-size: 15px;
+  font-size: 11px;
   font-weight: 600;
-  margin-bottom: 6px;
+  margin-bottom: 2px;
 }
 
 .summary-item p {
-  font-size: 13px;
+  font-size: 10px;
   color: rgba(255,255,255,0.65);
-  line-height: 1.6;
+  line-height: 1.4;
 }
 
 /* ===== NAVIGATION ===== */
@@ -675,7 +680,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 24px;
+  padding: 6px 16px;
   background: rgba(15,28,42,0.95);
   backdrop-filter: blur(15px);
   border-top: 1px solid rgba(255,255,255,0.08);
@@ -686,13 +691,13 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 22px;
-  border-radius: 12px;
+  padding: 6px 14px;
+  border-radius: 8px;
   border: 1px solid rgba(255,255,255,0.15);
   background: rgba(255,255,255,0.06);
   color: white;
   font-family: 'Heebo', sans-serif;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s;
@@ -716,7 +721,7 @@ body {
 }
 
 .slide-counter {
-  font-size: 14px;
+  font-size: 12px;
   color: rgba(255,255,255,0.5);
   font-weight: 500;
   font-family: 'Rubik', sans-serif;
@@ -747,19 +752,19 @@ body {
 .checklist li {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
-  padding: 10px 0;
-  font-size: 15px;
+  gap: 8px;
+  padding: 3px 0;
+  font-size: 11px;
   color: rgba(255,255,255,0.8);
-  line-height: 1.7;
+  line-height: 1.4;
   border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 .checklist li:last-child { border-bottom: none; }
 
 .check-icon {
-  width: 24px; height: 24px;
-  border-radius: 7px;
+  width: 18px; height: 18px;
+  border-radius: 5px;
   background: rgba(102,187,106,0.15);
   display: flex;
   align-items: center;
@@ -779,7 +784,7 @@ body {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 600px) {
-  .slide { padding: 24px 20px 90px; }
+  .slide { padding: 8px 12px 50px; }
   .title-slide .topics-preview { grid-template-columns: 1fr 1fr; gap: 8px; }
   .step-card { padding: 16px; }
   .quiz-card { padding: 20px; }
@@ -824,8 +829,61 @@ body {
     </div>
   </div>
 
-  <!-- ===== SLIDE 1: SECTION 1 DIVIDER ===== -->
-  <div class="slide divider-slide" data-index="1">
+  <!-- ===== SLIDE 1: ADVANTAGES ===== -->
+  <div class="slide" data-index="1">
+    <div class="slide-inner">
+      <div class="section-header">
+        <div class="section-icon blue">💎</div>
+        <div>
+          <div class="section-title">למה גוגל פורמס?</div>
+          <div class="section-subtitle">יתרונות באיסוף תגובות ומשובים</div>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number blue">✓</div>
+        <div class="step-title">חינמי ומוכן לשימוש</div>
+        <div class="step-desc">
+          לא צריך להתקין כלום – עובד ישר מהדפדפן עם חשבון הגוגל של בית הספר.
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number blue">✓</div>
+        <div class="step-title">איסוף תגובות אוטומטי</div>
+        <div class="step-desc">
+          כל תשובה נאספת אוטומטית – לא צריך לאסוף דפים, לספור או להקליד.
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number blue">✓</div>
+        <div class="step-title">גיליון תגובות ב-Google Sheets</div>
+        <div class="step-desc">
+          בלחיצה אחת נוצר <span class="highlight">גיליון אלקטרוני</span> עם כל התגובות בטבלה מסודרת.
+          <br>הגיליון <strong>מתעדכן אוטומטית</strong> – אפשר לשמור אותו ולחזור אליו בכל זמן!
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number blue">✓</div>
+        <div class="step-title">בדיקה אוטומטית + ציונים</div>
+        <div class="step-desc">
+          במצב "בוחן" – הטופס בודק ונותן ציון לתלמיד <strong>מיד</strong>, בלי שתצטרכו לבדוק בעצמכם.
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <div class="tip-icon">⭐</div>
+        <div class="tip-text">
+          <strong>בקיצור:</strong> יוצרים פעם אחת → שולחים קישור → התגובות נאספות ומתעדכנות בגיליון לבד!
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SLIDE 2: SECTION 1 DIVIDER ===== -->
+  <div class="slide divider-slide" data-index="2">
     <div class="divider-number blue">1</div>
     <div class="divider-title">הקמת גוגל פורמס</div>
     <div class="divider-desc">יוצרים טופס חדש בשלושה צעדים פשוטים</div>
@@ -932,8 +990,64 @@ body {
     </div>
   </div>
 
-  <!-- ===== SLIDE 4: SECTION 2 DIVIDER ===== -->
-  <div class="slide divider-slide" data-index="4">
+  <!-- ===== SLIDE: QUESTION TYPES ===== -->
+  <div class="slide" data-index="5">
+    <div class="slide-inner">
+      <div class="section-header">
+        <div class="section-icon blue">📝</div>
+        <div>
+          <div class="section-title">סוגי שאלות – מה יש?</div>
+          <div class="section-subtitle">שאלות לבוחן + שאלות לרפלקציה</div>
+        </div>
+      </div>
+
+      <div class="step-card" style="border-right: 3px solid var(--sky);">
+        <div style="font-size:13px; color:var(--sky); font-weight:600; margin-bottom:10px;">🎯 שאלות לבוחן (עם ציון אוטומטי)</div>
+        <div class="step-title">בחירה מרובה (Multiple Choice)</div>
+        <div class="step-desc">
+          התלמיד בוחר <strong>תשובה אחת</strong> מתוך כמה אפשרויות.
+          <br>הכי נפוץ בבחנים – קל לבדיקה אוטומטית!
+        </div>
+      </div>
+
+      <div class="step-card" style="border-right: 3px solid var(--sky);">
+        <div style="font-size:13px; color:var(--sky); font-weight:600; margin-bottom:10px;">🎯 שאלות לבוחן</div>
+        <div class="step-title">תיבות סימון (Checkboxes)</div>
+        <div class="step-desc">
+          התלמיד יכול לסמן <strong>כמה תשובות נכונות</strong> באותה שאלה.
+          <br>למשל: "סמנו את כל הדוגמאות הנכונות"
+        </div>
+      </div>
+
+      <div class="step-card" style="border-right: 3px solid var(--purple);">
+        <div style="font-size:13px; color:var(--purple); font-weight:600; margin-bottom:10px;">🪞 שאלות לרפלקציה (לא לציון)</div>
+        <div class="step-title">סולם לינארי (Linear Scale)</div>
+        <div class="step-desc">
+          התלמיד דורג על סולם מספרי, למשל <span class="highlight purple">1 עד 5</span>.
+          <br>לדוגמה: "עד כמה הבנת את החומר?" (1 = בכלל לא, 5 = מאוד)
+        </div>
+      </div>
+
+      <div class="step-card" style="border-right: 3px solid var(--purple);">
+        <div style="font-size:13px; color:var(--purple); font-weight:600; margin-bottom:10px;">🪞 שאלות לרפלקציה</div>
+        <div class="step-title">רשת בחירה / דירוג (Grid)</div>
+        <div class="step-desc">
+          טבלה שבה התלמיד מדרג כמה פריטים בבת אחת.
+          <br>למשל: "דרגו את עצמכם בכל אחד מהנושאים הבאים"
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <div class="tip-icon">💡</div>
+        <div class="tip-text">
+          <strong>טיפ:</strong> שלבו שאלות רפלקציה <strong>בסוף הבוחן</strong> – ככה מקבלים משוב מהתלמיד על החוויה, בלי שזה ישפיע על הציון!
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SLIDE: SECTION 2 DIVIDER ===== -->
+  <div class="slide divider-slide" data-index="6">
     <div class="divider-number green">2</div>
     <div class="divider-title">הגדרה כבוחן</div>
     <div class="divider-desc">הופכים את הטופס למבחן עם ציונים אוטומטיים</div>
@@ -1220,18 +1334,35 @@ body {
 
       <div class="step-card">
         <div class="step-number purple">3</div>
-        <div class="step-title">ייצוא לגיליון אלקטרוני</div>
+        <div class="step-title">יצירת גיליון Google Sheets</div>
         <div class="step-desc">
-          לוחצים על הכפתור הירוק <span class="highlight green">📊</span> (אייקון Google Sheets).
+          לוחצים על הכפתור הירוק <span class="highlight green">📊</span> (אייקון Google Sheets) בלשונית "תגובות".
           <br><br>
-          זה פותח גיליון עם <strong>כל התשובות</strong> בטבלה מסודרת – שם, תאריך, תשובות וציון!
+          נוצר <strong>גיליון אלקטרוני</strong> עם כל התשובות בטבלה מסודרת:
+          <br>• שם התלמיד
+          <br>• תאריך ושעה
+          <br>• כל התשובות
+          <br>• ציון (במצב בוחן)
+        </div>
+      </div>
+
+      <div class="step-card" style="border-right: 3px solid var(--green);">
+        <div class="step-number green">✨</div>
+        <div class="step-title">הגיליון מתעדכן לבד!</div>
+        <div class="step-desc">
+          כל פעם שתלמיד שולח תשובה – <strong>שורה חדשה נוספת אוטומטית</strong> לגיליון.
+          <br><br>
+          אתם יכולים:
+          <br>• <span class="highlight green">לשמור את הגיליון</span> בדרייב ולחזור אליו מתי שרוצים
+          <br>• <span class="highlight green">לעקוב בזמן אמת</span> – לפתוח את הגיליון ולראות תשובות נכנסות
+          <br>• <span class="highlight green">לסנן ולמיין</span> – למשל לראות רק תלמידים שקיבלו מתחת ל-60
         </div>
       </div>
 
       <div class="tip-box">
-        <div class="tip-icon">💡</div>
+        <div class="tip-icon">⭐</div>
         <div class="tip-text">
-          <strong>טיפ:</strong> הגיליון מתעדכן אוטומטית כל פעם שמישהו עונה!
+          <strong>המלצה:</strong> ברגע שיוצרים בוחן – ליצור מיד גיליון Sheets. ככה כל התגובות נשמרות אוטומטית ואפשר לחזור אליהן גם אחרי חודשים!
         </div>
       </div>
     </div>
@@ -1433,7 +1564,7 @@ function showSlide(index) {
   document.getElementById('progressFill').style.width = progress + '%';
 
   // Init quiz if needed
-  if (index === 15 && !quizInitialized) {
+  if (index === 17 && !quizInitialized) {
     initQuiz();
   }
 }
